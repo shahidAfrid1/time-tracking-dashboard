@@ -1,0 +1,304 @@
+html{
+  overflow-x: hidden;
+}
+
+main {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: $Verydarkblue;
+  padding: 21.315% 6.395%;
+  @include sml {
+    padding: 12% 6%;
+  }
+  @include lgl {
+    padding: 17.362% 11.32%;
+  }
+
+  .dashboard {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    gap: 25px;
+    @include tbl {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include sml {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include lgl {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+    }
+
+    .profile-container {
+      grid-column: 1/-1;
+      position: relative;
+      background-color: $Darkblue;
+      border-radius: 15px;
+      @include lgl {
+        grid-column: 1;
+        grid-row: 1/3;
+      }
+      .profile {
+        position: relative;
+        background-color: $Blue;
+        color: white;
+        padding: 9%;
+        border-radius: 4vw;
+        z-index: 2;
+
+        @include rwd(1024px) {
+          display: flex;
+          align-items: center;
+        }
+        @include tbl {
+          padding: 38px;
+          border-radius: 15px;
+        }
+
+        @include lgl {
+          padding: 33px 28px 66px 30px;
+        }
+        > img {
+          width: 19vw;
+          height: 19vw;
+          border: 3px solid white;
+          border-radius: 50%;
+          margin-right: 7%;
+
+          @include tbl {
+            width: 91px;
+            height: 91px;
+            margin-right: 25px;
+          }
+
+          @include lgl {
+            width: 87px;
+            height: 87px;
+            margin-bottom: 45px;
+          }
+        }
+
+        .name {
+          > h5 {
+            font-size: 5vw;
+            font-weight: 100;
+            color: $PaleBlue;
+            @include tbl {
+              font-size: 24px;
+            }
+
+            @include lgl {
+              font-size: 18px;
+            }
+          }
+
+          > h1 {
+            font-size: 6vw;
+            font-weight: 100;
+
+            @include tbl {
+              font-size: 28px;
+            }
+
+            @include lgl {
+              font-size: 37px;
+            }
+          }
+        }
+      }
+      .button-box {
+        position: relative;
+        align-items: center;
+        background-color: $Darkblue;
+        color: $Desaturatedblue;
+        border-radius: 0 0 4vw 4vw;
+        height: 19vw;
+        
+        @include rwd(1024px) {
+          display: flex;
+          justify-content: space-around;
+        }
+        @include tbl {
+          height: 91px;
+          border-radius: 0 0 15px 15px;
+        }
+
+        @include lgl {
+          height: 164px;
+          padding: 20px 32px;
+        }
+        > div {
+          font-size: 4vw;
+          cursor: pointer;
+          &:hover{
+            color: white;
+          }
+          @include tbl {
+            font-size: 19px;
+           
+          }
+          @include lgl{
+            margin-bottom: 17px;
+          }
+
+          &.active{
+            color: white;
+          }
+        }
+
+        
+      }
+    }
+    .item {
+      background-position: 93% -4%;
+      background-repeat: no-repeat;
+      background-size: 21vw;
+      border-radius: 4vw;
+
+      @include tbl{
+        background-size: 100px;
+        border-radius: 19.2px;
+      }
+
+      @include lgl{
+        background-size: 75px;
+        border-radius: 15px 15px 17px 17px;
+      }
+      .bg-box{
+        height: 11vw;
+
+        @include tbl{
+          height: 53px;
+        }
+
+        @include lgl{
+          height: 45px;
+        }
+      }
+
+      .status-box{
+        background-color: $Darkblue;
+        border-radius: 3vw;
+        padding: 10% 8%;
+        color: white;
+        cursor: pointer;
+        &:hover{
+          background-color: rgb(51, 38, 128);
+        }
+        @include tbl{
+          padding: 42px 33.5px;
+          border-radius: 14.5px;
+        }
+
+        @include lgl{
+          padding: 31px;
+        }
+        .title{
+          position: relative;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          > h4{
+            font-size: 4vw;
+            font-weight: 400;
+
+            @include tbl{
+              font-size: 19.3px;
+            }
+
+            @include lgl{
+              font-size: 18px;
+            }
+          }
+
+          .dot{
+            display: flex;
+            cursor: pointer;
+            &:hover{
+              > div{
+                background-color: white;
+              }
+            }
+            > div {
+              width: 5px;
+              height: 5px;
+              border-radius: 50%;
+              background-color: $PaleBlue;
+              margin-left: 5px;
+            }
+          }
+        }
+
+        .time{
+          margin-top: 4%;
+
+          @include rwd(480px){
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          }
+          @include tbl{
+            margin-top: 14px;
+          }
+          @include lgl{
+            margin-top: 42px;
+          }
+          .current{
+            font-size: 7vw;
+            font-weight: 300;
+
+            @include tbl{
+              font-size: 34px;
+            }
+
+            @include lgl{
+              font-size: 42px;
+            }
+          }
+
+          .previous{
+            font-size: 4vw;
+            color: $PaleBlue;
+
+            @include tbl{
+              font-size: 16px;
+            }
+
+            @include lgl{
+              font-size: 15px;
+            }
+          }
+        }
+      }
+    }
+    .work{
+      background-color: $Lightred;
+      background-image: url("/images/icon-work.svg");
+    }
+    .play{
+      background-color: $Softblue;
+      background-image: url("/images/icon-play.svg");
+    }
+    .study{
+      background-color: $Darkred;
+      background-image: url("/images/icon-study.svg");
+    }
+    .exercise{
+      background-color: $Limegreen;
+      background-image: url("/images/icon-exercise.svg");
+    }
+    .social{
+      background-color: $Violet;
+      background-image: url("/images/icon-social.svg");
+    }
+    .selfcare{
+      background-color: $Softorange;
+      background-image: url("/images/icon-self-care.svg");
+    }
+    
+  }
+}
